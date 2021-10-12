@@ -16,11 +16,8 @@ class Navbar extends React.Component {
       <div>
         <NavLink
           to="/"
-          /* set exact so it knows to only set activeStyle when route is deeply equal to link */
           exact
-          /* add styling to Navlink */
           style={link}
-          /* add prop for activeStyle */
           activeStyle={{
             background: "darkblue",
           }}
@@ -37,6 +34,16 @@ class Navbar extends React.Component {
         >
           About
         </NavLink>
+        <NavLink
+          to="/fighter"
+          exact
+          style={link}
+          activeStyle={{
+            background: "darkblue",
+          }}
+        >
+          Fighters
+        </NavLink>
         
       </div>
     );
@@ -44,3 +51,6 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
+          
+         
+         
