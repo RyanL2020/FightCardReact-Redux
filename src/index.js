@@ -1,13 +1,13 @@
 import React from 'react'
-import ReactDOM from "react-dom";
-import App from "src/components/App.js";
+import ReactDOM from 'react-dom';
+import App from './components/App';
 //import routes from './routes/routes.js';
 
 
 
 ReactDOM.render(
-    <App /> ,
-    document.getElementById("#root")
-  );
+       
+    <App />, 
+    document.querySelector('#root'));
     
         
