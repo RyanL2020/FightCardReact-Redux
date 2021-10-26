@@ -6,4 +6,4 @@ class Fighter extends React.Component {
     }
 }
 
-export default Fighter
+export default Fighter;
