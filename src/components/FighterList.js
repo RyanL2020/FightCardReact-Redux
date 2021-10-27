@@ -7,9 +7,19 @@ class Fighter extends React.Component {
     componentDidMount() {
         this.props.fetchFighters();
     }
+    renderList() {
+        return this.props.posts.map(fighter => {
+          return (
+            <div>                                 
+                  <h2>{fighter.name}</h2>
+                  <p>{fighter.style}</p>
+            </div>
+          );
+        });
+      }
 
     render() {
-        return <h1>Fighters go here </h1>
+        return <div>{this.renderList()}</div>    
     }
 }
 const mapStateToProps = state => {

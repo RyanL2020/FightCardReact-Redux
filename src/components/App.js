@@ -4,11 +4,16 @@ import React from 'react';
 //import Fighter from "./FighterList"
 //import Navbar from "./Navbar";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import FighterList from './FighterList';
 
 class App extends React.Component {
     render() {
-        return <div>App</div>
+        return (
+        <div>  
+            <FighterList/> 
+            
+        </div>
+        );
     }
 }
 
