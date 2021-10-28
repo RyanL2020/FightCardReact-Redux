@@ -9,7 +9,7 @@ import FighterList from './FighterList';
 class App extends React.Component {
     render() {
         return (
-        <div>  
+        <div className="ui container">  
             <FighterList/> 
             
         </div>
