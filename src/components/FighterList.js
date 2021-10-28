@@ -2,6 +2,7 @@ import React from 'react';
 import { connect }  from 'react-redux';
 import { fetchFighters } from '../actions';
 import  FighterTitle  from './FighterListTitle';
+import NewFighterForm from './NewFighterForm';
 
 
 class Fighter extends React.Component {
@@ -14,8 +15,8 @@ class Fighter extends React.Component {
         return this.props.fighters.map(fighter => {
             return (
                
-            <div className="item" key={fighter.id}>
-              <div className="ui card">
+            
+              <div className="ui card" key={fighter.id}>
                 <div className="image">
                     <img src={fighter.image_url} alt="combat athlete" />
                 </div>
@@ -24,14 +25,16 @@ class Fighter extends React.Component {
                  
                 <div className="descrition"> 
                   <p>    
-                <h4>Style:  {fighter.style}</h4>
-                <h4> Wins:  {fighter.wins}</h4>
-                <h4>Losses:  {fighter.losses}</h4>
+                Style:  {fighter.style}
+                <br/>
+                Wins:  {fighter.wins}
+                <br/>
+                Losses:  {fighter.losses}
                 </p> 
                 </div>
               </div> 
             </div>
-        </div>
+        
              
           );
         });
@@ -41,6 +44,7 @@ class Fighter extends React.Component {
         return (
         <div>
             <FighterTitle />
+            <NewFighterForm />
             {this.renderList()}
         </div>  
         );  
