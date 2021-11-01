@@ -1,19 +1,15 @@
-import React from 'react';
-import { connect }  from 'react-redux';
-import  { fetchFighters } from '../actions/index.js';
-import  FighterTitle  from './FighterListTitle';
-import NewFighterForm from './NewFighterForm';
+import React from "react";
+import {fetchFighters} from "../actions";
+import { connect } from 'react-redux';
 
-
-class FighterList extends React.Component {
+class New extends React.Component {
     componentDidMount() {
         debugger
-        console.log(this.props);
         this.props.fetchFighters();
     }
 
     renderList() {
-        console.log(this.props);
+        
         return this.props.fighters.map(fighter => {
             return (
                
@@ -42,27 +38,16 @@ class FighterList extends React.Component {
         });
       }
 
+    
+
     render() {
-        return (
-        <div>
-            <FighterTitle />
-            <NewFighterForm />
-            {this.renderList()}
-        </div>  
-        );  
-    }
-}
-            
-const mapStateToProps = state => {
-    return { 
-        fighters: state.fighters, 
-        loading: state.loading
+        return <div>{this.renderList()} </div>; 
     };
-  };
+};
+
 
 export default connect(
-    mapStateToProps,
+    null,
     { fetchFighters},  
-  )(FighterList);
-  
+  )(New);
   
