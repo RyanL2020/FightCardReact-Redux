@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 
 class New extends React.Component {
     componentDidMount() {
-        debugger
+       // debugger
         this.props.fetchFighters();
     }
 
     renderList() {
-        
-        return this.props.fighters.map(fighter => {
+       // debugger
+        return this.props.fighters.fighters.map(fighter => {
             return (
                
             
@@ -45,9 +45,16 @@ class New extends React.Component {
     };
 };
 
+const mapStateToProps = state => {
+    return { 
+        fighters: state.fighters, 
+        loading: state.loading
+    };
+  };
+
 
 export default connect(
-    null,
+    mapStateToProps,
     { fetchFighters},  
   )(New);
   

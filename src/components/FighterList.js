@@ -7,14 +7,12 @@ import NewFighterForm from './NewFighterForm';
 
 class FighterList extends React.Component {
     componentDidMount() {
-        debugger
-        console.log(this.props);
         this.props.fetchFighters();
     }
 
     renderList() {
-        console.log(this.props);
-        return this.props.fighters.map(fighter => {
+        
+        return this.props.fighters.fighters.map(fighter => {
             return (
                
             

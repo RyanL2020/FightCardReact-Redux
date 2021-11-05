@@ -5,14 +5,14 @@ import React from 'react';
 //import Navbar from "./Navbar";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
 import FighterList from './FighterList';
-import New from './New';
+//import New from './New';
 
 class App extends React.Component {
     render() {
         return (
         <div className="ui container">  
-            { /*<FighterList/> */}
-            < New />
+            <FighterList/> 
+           
         </div>
         );
     }
