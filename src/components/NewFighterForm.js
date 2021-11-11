@@ -50,19 +50,19 @@ class NewFighterForm extends React.Component {
                   <label>fighter Image</label>
                   <input type="text" name="imageUrl" value={this.imageUrl.value} onChange={this._change} />
                 <label>Fighter Name</label>
-                <input type="text" name="name" value={this.name.value} placeholder="First Name" />
+                <input type="text" name="name" value={this.name.value} onChange={this._change} placeholder="First Name" />
               </div>
               <div className="field">
                 <label>Style</label>
-                <input type="text" name="style"  placeholder="Fighting Style" />
+                <input type="text" name="style" value={this.style.value} onChange={this._change}  placeholder="Fighting Style" />
               </div>
               <div className="field">
                 <label>Wins</label>
-                <input type="text" name="wins" placeholder="Wins" />
+                <input type="text" name="wins" value={this.wins.value} onChange={this._change} placeholder="Wins" />
               </div>
               <div className="field">
                 <label>Losses</label>
-                <input type="text" name="Losses"  placeholder="Losses" />
+                <input type="text" name="Losses" value={this.losses.value} onChange={this._change}   placeholder="Losses" />
               </div>
               <button className="ui button" type="submit" >Submit</button>
             </form>
