@@ -4,14 +4,26 @@ import React from 'react';
 //import Fighter from "./FighterList"
 //import Navbar from "./Navbar";
 //import { BrowserRouter as Router, Route } from "react-router-dom";
-import FighterList from './FighterList';
 //import New from './New';
+import { BrowserRouter, Route, Switch} from "react-router-dom";
+import Home from './Home.js';
+import About from './About.js';
+import FighterList from './FighterList';
+import Navbar from './Navbar';
 
 class App extends React.Component {
     render() {
         return (
         <div className="ui container">  
-            <FighterList/> 
+            <BrowserRouter>  
+             <Navbar />           
+              <Switch> 
+                <Route exact={true} path="/"> <Home /> </Route>
+
+                <Route exact={true} path="/about"> <About />  </Route> 
+                <Route exact={true} path="/fighter" > <FighterList /> </Route>
+              </ Switch >
+            </BrowserRouter>
            
         </div>
         );

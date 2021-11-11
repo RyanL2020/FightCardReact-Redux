@@ -14,6 +14,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <div>
+        {/* <BrowserRouter >      */}
         <NavLink
           to="/"
           exact
@@ -44,13 +45,10 @@ class Navbar extends React.Component {
         >
           Fighters
         </NavLink>
-        
+        {/* </BrowserRouter> */}
       </div>
     );
   }
 }
 
 export default Navbar;
-          
-         
-         

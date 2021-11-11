@@ -1,15 +1,16 @@
 export const fetchFighters = () => {
     return(dispatch) => {   
         //debugger 
-        dispatch({ type: "FETCH_FIGHTERS"});
-        fetch("http://localhost:3000/fighters")
+        //dispatch({ type: "FETCH_FIGHTERS"});
+         fetch("http://localhost:3000/fighters")
         .then((response) => {
             return response.json();
         }) 
         .then((fighters) => {
        
-            
-        dispatch({ type: "ADD_FIGHTERS", fighters: fighters})
+            console.log(fighters)
+        dispatch({ type: "FETCH_FIGHTERS", fighters: fighters})
+        
     })
 };
 };

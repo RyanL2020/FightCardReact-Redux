@@ -12,14 +12,14 @@ class FighterList extends React.Component {
 
     renderList() {
         
-        return this.props.fighters.fighters.map(fighter => {
+        return this.props.fighters.fighters.map(fighter => { console.log(fighter)
             return (
                
-            
-              <div className="ui card" key={fighter.id}>
-                <div className="image">
+               
+                <div className="ui card" key={fighter.id}>
+                 <div className="image">
                     <img src={fighter.image_url} alt="combat athlete" />
-                </div>
+                </div> 
                 <div className="header">
                     {fighter.name}
                  
@@ -35,7 +35,7 @@ class FighterList extends React.Component {
               </div> 
             </div>
         
-             
+               
           );
         });
       }
@@ -43,7 +43,9 @@ class FighterList extends React.Component {
     render() {
         return (
         <div>
+            <div>      
             <FighterTitle />
+            </div>
             <NewFighterForm />
             {this.renderList()}
         </div>  

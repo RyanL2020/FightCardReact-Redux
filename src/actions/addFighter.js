@@ -1,7 +1,8 @@
 // post fetch for adding a new fighter
  const addFighter = (fighter) => {
+     console.log(fighter, "fighterHere")
     return(dispatch) => {
-        dispatch({ type: "ADD_FIGHTERS", fighter: fighter})
+       // dispatch({ type: "ADD_FIGHTERS", fighter: fighter})
         fetch("http://localhost:3000/fighters", {
             method: "POST",
             headers: {
@@ -9,7 +10,8 @@
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                name: fighter.firstName,
+                image: fighter.image_url,
+                name: fighter.name,
                 style: fighter.style,
                 wins: fighter.wins,
                 losses: fighter.losses,

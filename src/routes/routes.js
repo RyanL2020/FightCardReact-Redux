@@ -1,21 +1,24 @@
-//import React from 'react';
-////import { Router, Route } from 'react-router';
-//import { BrowserRouter as Router, Route } from "react-router-dom";
-//import Home from 'src/components/Home.js';
-//import About from 'src/components/About.js';
+import React from 'react';
+
+import { BrowserRouter, Route, Switch} from "react-router-dom";
+import Home from '../components/Home.js';
+import About from '../components/About.js';
+import FighterList from '../components/FighterList';
+import Navbar from '../components/Navbar'
 //import Fighter from 'src/components/Fighter.js';
-//import { Home, About, Fighter} from 'src/components'
+//import { Home, About, FighterList} from 'src/components'
 
 
-//const routes = () => (
-//    <Router>  
-// 
-//        <Navbar />           
-//        <Route exact path="/" component={Home} />
-//        <Route exact path="/about" component={About} />
-//        <Route exact path="/fighter" component={Fighter} />
-// 
-//</Router>
-//);
+const Routes = () => (
+   <BrowserRouter>  
+      <Navbar />           
+    <Switch> 
+       <Route exact={true} path="/"> <Home /> </Route>
 
-export default createRoutes;
+       <Route exact={true} path="/about"> <About />  </Route> 
+       <Route exact={true} path="/fighter" > <FighterList /> </Route>
+    </ Switch >
+</BrowserRouter>
+);
+
+export default Routes;

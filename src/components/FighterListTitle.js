@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FighterTitle = () => {
-    return <div>The Fighters!</div>
+    return <h1>The Fighters!</h1>
 }
 
 export default FighterTitle;
