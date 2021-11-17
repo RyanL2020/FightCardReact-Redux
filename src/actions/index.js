@@ -4,11 +4,18 @@ export const fetchFighters = () => {
         //dispatch({ type: "FETCH_FIGHTERS"});
          fetch("http://localhost:3000/fighters")
         .then((response) => {
-            return response.json();
+            console.log(response)
+            let data 
+            if (response.ok) {
+
+                data = response.json()
+                console.log(data)
+            }
+            return data;
         }) 
         .then((fighters) => {
        
-            console.log(fighters)
+            console.log(fighters, "fighters here")
         dispatch({ type: "FETCH_FIGHTERS", fighters: fighters})
         
     })

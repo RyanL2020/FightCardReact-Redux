@@ -10,6 +10,7 @@ import Home from './Home.js';
 import About from './About.js';
 import FighterList from './FighterList';
 import Navbar from './Navbar';
+import Counter from './Counter.js';
 
 class App extends React.Component {
     render() {
@@ -18,7 +19,7 @@ class App extends React.Component {
             <BrowserRouter>  
              <Navbar />           
               <Switch> 
-                <Route exact={true} path="/"> <Home /> </Route>
+                <Route exact={true} path="/"> <Counter /> </Route>
 
                 <Route exact={true} path="/about"> <About />  </Route> 
                 <Route exact={true} path="/fighter" > <FighterList /> </Route>

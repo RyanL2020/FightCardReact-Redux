@@ -8,6 +8,7 @@ class NewFighterForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            imageUrl: " ",
             firstName: " ",
             style:  " ",
             wins: 0 ,
@@ -20,13 +21,20 @@ class NewFighterForm extends React.Component {
     }
 
     _handleInputChange(event) {
-        this.setState({ value: event.target.value })
+        // this.setState({ value: event.target.value })
+        this.setState({ imageUrl: this.state.imageUrl,    
+                    name: this.state.firstName,
+                    style: this.state.style,
+                    wins: this.state.wins,
+                    losses: this.state.losses
+                   
+                })
     }
 
     handleSubmit(event){
         event.preventDefault();
         let imageUrl = event.target.imageUrl.value;
-        let name = event.target.name.value;
+        let name = event.target.firstName.value;
         let style = event.target.style.value;
         let wins = event.target.wins.value;
         let losses = event.target.losses.value;
@@ -37,6 +45,7 @@ class NewFighterForm extends React.Component {
             wins,
             losses
         }
+        this._handleInputChange()
         this.props.addFighter(newFighter);
     }
     
@@ -48,21 +57,21 @@ class NewFighterForm extends React.Component {
             <form  onSubmit={this.handleSubmit}className="ui form">
               <div className="field">
                   <label>fighter Image</label>
-                  <input type="text" name="imageUrl" value={this.imageUrl.value} onChange={this._change} />
+                  <input type="text" name="imageUrl" value={this.state.imageUrl.value} onChange={this._change} />
                 <label>Fighter Name</label>
-                <input type="text" name="name" value={this.name.value} onChange={this._change} placeholder="First Name" />
+                <input type="text" name="firstName" value={this.state.firstName.value} onChange={this._change} placeholder="First Name" />
               </div>
               <div className="field">
                 <label>Style</label>
-                <input type="text" name="style" value={this.style.value} onChange={this._change}  placeholder="Fighting Style" />
+                <input type="text" name="style" value={this.state.style.value} onChange={this._change}  placeholder="Fighting Style" />
               </div>
               <div className="field">
                 <label>Wins</label>
-                <input type="text" name="wins" value={this.wins.value} onChange={this._change} placeholder="Wins" />
+                <input type="text" name="wins" value={this.state.wins.value} onChange={this._change} placeholder="Wins" />
               </div>
               <div className="field">
                 <label>Losses</label>
-                <input type="text" name="Losses" value={this.losses.value} onChange={this._change}   placeholder="Losses" />
+                <input type="text" name="losses" value={this.state.losses.value} onChange={this._change}   placeholder="Losses" />
               </div>
               <button className="ui button" type="submit" >Submit</button>
             </form>
