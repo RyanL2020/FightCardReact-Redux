@@ -11,7 +11,7 @@
             },
             body: JSON.stringify({
                 image: fighter.image_url,
-                name: fighter.name,
+                name: fighter.firstName,
                 style: fighter.style,
                 wins: fighter.wins,
                 losses: fighter.losses,

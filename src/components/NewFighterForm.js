@@ -23,7 +23,7 @@ class NewFighterForm extends React.Component {
     _handleInputChange(event) {
         // this.setState({ value: event.target.value })
         this.setState({ imageUrl: this.state.imageUrl,    
-                    name: this.state.firstName,
+                    firstName: this.state.firstName,
                     style: this.state.style,
                     wins: this.state.wins,
                     losses: this.state.losses
@@ -34,13 +34,13 @@ class NewFighterForm extends React.Component {
     handleSubmit(event){
         event.preventDefault();
         let imageUrl = event.target.imageUrl.value;
-        let name = event.target.firstName.value;
+        let firstName = event.target.firstName.value;
         let style = event.target.style.value;
         let wins = event.target.wins.value;
         let losses = event.target.losses.value;
         const newFighter = {
             imageUrl,
-            name,
+            firstName,
             style,
             wins,
             losses
